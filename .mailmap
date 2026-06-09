@@ -1,6 +1,6 @@
-# Re-attribute Cursor co-author trailers to the project owner.
+
 # GitHub uses this for the Contributors sidebar (display-only; does not rewrite history).
 # See: https://git-scm.com/docs/gitmailmap
 
-Ali Gill <ali.gill@mail.utoronto.ca> Cursor <cursoragent@cursor.com>
-Ali Gill <135542848+Un0nnn@users.noreply.github.com> Cursor <cursoragent@cursor.com>
+Ali Gill <ali.gill@mail.utoronto.ca> 
+Ali Gill <135542848+Un0nnn@users.noreply.github.com> 
