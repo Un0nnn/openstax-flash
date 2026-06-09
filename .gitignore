@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env/
+
+# Generated flashcard exports (user output — do not commit)
+decks/
+output/
+*.tsv
+*.apkg
+# Anki deck text files (use decks/ folder; keeps README/LICENSE safe)
+*-deck.txt
+
+# Local tool cache (if --cache-dir is set inside the repo)
+.cache/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Secrets & local config (this tool needs none, but block by default)
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# Test / scratch files
+*.log
+/tmp/
+scratch/

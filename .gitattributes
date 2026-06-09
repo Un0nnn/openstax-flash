@@ -1,0 +1,8 @@
+# Normalize line endings across platforms
+* text=auto eol=lf
+
+# Scripts must stay executable with LF
+*.py text eol=lf
+
+# Binary exports (if ever committed by mistake, treat as binary)
+*.apkg binary
