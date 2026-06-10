@@ -14,7 +14,7 @@ Email or DM the maintainer privately with:
 - Steps to reproduce
 - Impact assessment (if known)
 
-We aim to respond within 7 days.
+Will aim to respond within 7 days.
 
 ## Scope
 
