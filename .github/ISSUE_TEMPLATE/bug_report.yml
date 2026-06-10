@@ -1,0 +1,57 @@
+name: Bug report
+description: Something isn't working as expected
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve openstax-flash. Please search [existing issues](https://github.com/Un0nnn/openstax-flash/issues) first.
+
+  - type: input
+    id: version
+    attributes:
+      label: Python version
+      placeholder: "e.g. 3.12.3"
+    validations:
+      required: true
+
+  - type: input
+    id: book
+    attributes:
+      label: Book slug (if applicable)
+      placeholder: "e.g. university-physics-volume-1"
+    validations:
+      required: false
+
+  - type: textarea
+    id: command
+    attributes:
+      label: Command you ran
+      description: Copy the full command, including flags
+      placeholder: "python3 openstax_flash.py extract college-physics-2e --format anki -o deck.txt"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What actually happened
+      description: Include error messages or unexpected output
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      description: OS, cache flags (`--no-cache`), screenshots, etc.
+    validations:
+      required: false

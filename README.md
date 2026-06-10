@@ -1,8 +1,29 @@
 # openstax-flash
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![OpenStax](https://img.shields.io/badge/source-OpenStax-green.svg)](https://openstax.org)
+
 Generate flashcards from **OpenStax** textbook Key Terms, Glossary, and Summary pages — exported ready for **Anki**, Quizlet, or JSON/Markdown pipelines.
 
 Works with **70+ live OpenStax books** on [openstax.org](https://openstax.org). Stdlib-only Python — no `pip install` required.
+
+**[Download & get started](#download--get-started)** · **[Report a bug](https://github.com/Un0nnn/openstax-flash/issues/new?template=bug_report.yml)** · **[Contributing](CONTRIBUTING.md)**
+
+---
+
+## Table of contents
+
+- [Download & get started](#download--get-started)
+- [Features](#features)
+- [Commands](#commands)
+- [Examples](#examples)
+- [Export formats](#export-formats)
+- [Example books](#example-books)
+- [How it works](#how-it-works)
+- [Limitations](#limitations)
+- [Community](#community)
+- [License](#license)
 
 ---
 
@@ -186,6 +207,28 @@ Cache directory: `~/.cache/openstax-flash`
 - A few books have no glossary structure (e.g. `algebra-1`, `writing-guide`)
 - Linked-term books (e.g. organic chemistry) make extra requests per chapter
 - Summary-only books extract bold terms from bullet points, not formal definitions
+
+---
+
+## Community
+
+| | |
+|---|---|
+| **Report a bug** | [Bug report](https://github.com/Un0nnn/openstax-flash/issues/new?template=bug_report.yml) |
+| **Book not working** | [Book support](https://github.com/Un0nnn/openstax-flash/issues/new?template=book_support.yml) |
+| **Request a feature** | [Feature request](https://github.com/Un0nnn/openstax-flash/issues/new?template=feature_request.yml) |
+| **Contribute code** | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| **Security** | [SECURITY.md](SECURITY.md) (private reports only) |
+
+### Maintainer
+
+**[@Un0nnn](https://github.com/Un0nnn)** — project author and maintainer
+
+Pull requests from the community are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+### Contributors
+
+Community contributors who merge PRs appear on the [GitHub contributors graph](https://github.com/Un0nnn/openstax-flash/graphs/contributors). Thank you to everyone who reports issues and improves the tool.
 
 ---
 

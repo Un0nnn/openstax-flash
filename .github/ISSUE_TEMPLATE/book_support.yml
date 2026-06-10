@@ -1,0 +1,44 @@
+name: Book not working
+description: A book fails verify or returns no / broken flashcards
+title: "[Book]: "
+labels: ["book-support"]
+body:
+  - type: input
+    id: slug
+    attributes:
+      label: Book slug
+      placeholder: "e.g. organic-chemistry"
+    validations:
+      required: true
+
+  - type: textarea
+    id: verify
+    attributes:
+      label: Output of verify command
+      description: |
+        ```
+        python3 openstax_flash.py verify --sample <slug>
+        ```
+      placeholder: Paste terminal output here
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Issue type
+      options:
+        - No term pages found
+        - Zero terms extracted
+        - Math/formatting broken in definitions
+        - Wrong or missing definitions
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+    validations:
+      required: false
