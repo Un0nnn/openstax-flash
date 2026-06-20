@@ -205,7 +205,9 @@ Cache directory: `~/.cache/openstax-flash`
 
 - Requires OpenStax Rex web pages (books hosted on openstax.org)
 - A few books have no glossary structure (e.g. `algebra-1`, `writing-guide`)
-- Linked-term books (e.g. organic chemistry) make extra requests per chapter
+- Linked-term books (e.g. organic chemistry) make extra requests per chapter, and their
+  "definitions" are the surrounding sentence where the term is introduced rather than a
+  formal glossary definition — quality varies
 - Summary-only books extract bold terms from bullet points, not formal definitions
 
 ---
@@ -232,8 +234,27 @@ Community contributors who merge PRs appear on the [GitHub contributors graph](h
 
 ---
 
-## License
+## License & attribution
 
-**openstax-flash** (this tool) is licensed under the [MIT License](LICENSE).
+**openstax-flash** (this tool's source code) is licensed under the [MIT License](LICENSE).
 
-Exported flashcard text is derived from [OpenStax](https://openstax.org) textbooks (CC BY-licensed content). This tool does not redistribute full books — only user-requested glossary excerpts.
+**Exported flashcard text is *not* MIT-licensed.** It is derived from [OpenStax](https://openstax.org)
+textbooks, which are released under
+**[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)**. That means if you
+**share** generated decks (e.g. upload to AnkiWeb or Quizlet), you must:
+
+- **BY** — credit OpenStax, name the book, and link to the free version;
+- **NC** — keep it **non-commercial** (no selling decks, no paywalls/ads around them);
+- **SA** — license the shared deck under the same **CC BY-NC-SA 4.0** terms.
+
+Every export embeds this attribution automatically (as `#` comment lines in TSV/CSV, a quote
+block in Markdown, and a `meta.attribution` field in JSON). Quizlet output is left unannotated
+for clean import — add the attribution to the set description when sharing. Using generated cards
+for your own private study needs no attribution.
+
+This tool does not redistribute full books — only user-requested glossary excerpts fetched at
+runtime from public pages.
+
+> **Disclaimer:** openstax-flash is an independent, community project. It is **not affiliated
+> with, authored by, or endorsed by OpenStax or Rice University.** "OpenStax" is a trademark of
+> Rice University, used here only to describe the source of the content.

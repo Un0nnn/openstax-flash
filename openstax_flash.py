@@ -27,7 +27,7 @@ from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
-USER_AGENT = "openstax-flash/1.0 (+https://github.com/openstax; educational tool)"
+USER_AGENT = "openstax-flash/1.0 (+https://github.com/Un0nnn/openstax-flash; educational, non-commercial)"
 CMS_BOOKS_URL = "https://openstax.org/apps/cms/api/books/?format=json"
 DEFAULT_CACHE = Path.home() / ".cache" / "openstax-flash"
 CHAPTER_PAGE_RE = re.compile(r"^(\d+)-(?:key-terms|glossary|summary)$")
@@ -798,6 +798,35 @@ def extract_flashcards(
 
 
 # ---------------------------------------------------------------------------
+# Attribution / licensing (OpenStax content is CC BY-NC-SA 4.0)
+# ---------------------------------------------------------------------------
+
+LICENSE_URL = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+
+
+def book_free_url(book: BookMeta) -> str:
+    """Canonical free-access page for a book, used for required attribution."""
+    return f"https://openstax.org/details/books/{book.slug}"
+
+
+def attribution_lines(book: BookMeta) -> list[str]:
+    """Required CC BY-NC-SA 4.0 attribution + the affiliation disclaimer."""
+    return [
+        f'Content from OpenStax "{book.title}". Access for free at {book_free_url(book)}.',
+        f"Licensed under CC BY-NC-SA 4.0 ({LICENSE_URL}). If you share these cards, "
+        "you must credit OpenStax, keep them non-commercial, and license any "
+        "derivative under the same terms.",
+        "openstax-flash is not affiliated with, authored by, or endorsed by "
+        "OpenStax or Rice University.",
+    ]
+
+
+def attribution_comment_block(book: BookMeta, prefix: str = "# ") -> str:
+    """Attribution rendered as comment lines (ignored by Anki on import)."""
+    return "".join(f"{prefix}{line}\n" for line in attribution_lines(book))
+
+
+# ---------------------------------------------------------------------------
 # Export formats
 # ---------------------------------------------------------------------------
 
@@ -819,6 +848,11 @@ def export_json(result: ExtractResult, path: Path | None) -> str:
             "pages_total": result.pages_total,
             "pages_skipped": result.pages_skipped,
             "elapsed_s": round(result.elapsed_s, 2),
+            "source": "OpenStax",
+            "source_url": book_free_url(result.book),
+            "license": "CC BY-NC-SA 4.0",
+            "license_url": LICENSE_URL,
+            "attribution": " ".join(attribution_lines(result.book)),
         },
         "cards": [asdict(c) for c in result.cards],
     }
@@ -833,6 +867,8 @@ def export_markdown(result: ExtractResult, path: Path | None) -> str:
         f"# {result.book.title} — Flashcards",
         "",
         f"**{len(result.cards)}** terms from OpenStax Key Terms / Glossary / Summary pages.",
+        "",
+        "> " + "  \n> ".join(attribution_lines(result.book)),
         "",
     ]
     current_ch: int | None = None
@@ -858,7 +894,7 @@ def export_tsv(result: ExtractResult, path: Path | None, *, latex: bool = False,
         back = card_back(card, fmt).replace("\t", " ").replace("\n", " ")
         tags = " ".join(card.tags)
         rows.append(f"{front}\t{back}\t{tags}")
-    text = "\n".join(rows) + ("\n" if rows else "")
+    text = attribution_comment_block(result.book) + "\n".join(rows) + ("\n" if rows else "")
     if path:
         path.write_text(text, encoding="utf-8")
     return text
@@ -880,11 +916,14 @@ def export_csv(result: ExtractResult, path: Path | None) -> str:
                 " ".join(card.tags),
             ]
         )
+    header = attribution_comment_block(result.book)
     if path:
         with path.open("w", encoding="utf-8", newline="") as f:
+            f.write(header)
             csv.writer(f).writerows(buf)
         return path.read_text(encoding="utf-8")
     sio = io.StringIO()
+    sio.write(header)
     csv.writer(sio).writerows(buf)
     return sio.getvalue()
 
@@ -994,10 +1033,13 @@ def cmd_extract(args: argparse.Namespace) -> int:
         f"Extracted {len(result.cards)} cards from {result.chapters_fetched}/{result.pages_total} "
         f"pages in {result.elapsed_s:.1f}s → {dest}"
     )
-    if args.verbose or not out_path:
-        print(msg, file=sys.stderr)
-    elif out_path:
-        print(msg, file=sys.stderr)
+    print(msg, file=sys.stderr)
+    print(
+        f"License: OpenStax content under CC BY-NC-SA 4.0 — {book_free_url(result.book)}\n"
+        "         Attribution is embedded in the output. If you share these cards, keep "
+        "them non-commercial and under the same license.",
+        file=sys.stderr,
+    )
     return 0
 
 
