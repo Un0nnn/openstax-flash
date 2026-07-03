@@ -4,15 +4,15 @@ Thanks for helping improve a free study tool for OpenStax learners.
 
 ## Ways to contribute
 
-- **Report bugs** — [open a bug report](https://github.com/Un0nnn/openstax-flash/issues/new?template=bug_report.yml)
-- **Request features** — [feature request](https://github.com/Un0nnn/openstax-flash/issues/new?template=feature_request.yml)
-- **Flag a broken book** — [book support issue](https://github.com/Un0nnn/openstax-flash/issues/new?template=book_support.yml)
+- **Report bugs** — [open a bug report](https://github.com/0xiKOn/openstax-flash/issues/new?template=bug_report.yml)
+- **Request features** — [feature request](https://github.com/0xiKOn/openstax-flash/issues/new?template=feature_request.yml)
+- **Flag a broken book** — [book support issue](https://github.com/0xiKOn/openstax-flash/issues/new?template=book_support.yml)
 - **Submit a PR** — fork, branch, test, open a pull request
 
 ## Development setup
 
 ```bash
-git clone https://github.com/Un0nnn/openstax-flash.git
+git clone https://github.com/0xiKOn/openstax-flash.git
 cd openstax-flash
 python3 openstax_flash.py --help
 ```

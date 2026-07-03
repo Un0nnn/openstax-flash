@@ -8,7 +8,7 @@ Generate flashcards from **OpenStax** textbook Key Terms, Glossary, and Summary 
 
 Works with **70+ live OpenStax books** on [openstax.org](https://openstax.org). Stdlib-only Python — no `pip install` required.
 
-**[Download & get started](#download--get-started)** · **[Report a bug](https://github.com/Un0nnn/openstax-flash/issues/new?template=bug_report.yml)** · **[Contributing](CONTRIBUTING.md)**
+**[Download & get started](#download--get-started)** · **[Report a bug](https://github.com/0xiKOn/openstax-flash/issues/new?template=bug_report.yml)** · **[Contributing](CONTRIBUTING.md)**
 
 ---
 
@@ -39,19 +39,19 @@ Works with **70+ live OpenStax books** on [openstax.org](https://openstax.org). 
 **Option A — Git clone (recommended)**
 
 ```bash
-git clone https://github.com/Un0nnn/openstax-flash.git
+git clone https://github.com/0xiKOn/openstax-flash.git
 cd openstax-flash
 ```
 
 **Option B — Download ZIP**
 
-1. Open [github.com/Un0nnn/openstax-flash](https://github.com/Un0nnn/openstax-flash)
+1. Open [github.com/0xiKOn/openstax-flash](https://github.com/0xiKOn/openstax-flash)
 2. Click **Code → Download ZIP**
 3. Unzip and open a terminal in the folder
 
 **Option C — Single file**
 
-Download only [`openstax_flash.py`](https://raw.githubusercontent.com/Un0nnn/openstax-flash/main/openstax_flash.py) and run it from any directory.
+Download only [`openstax_flash.py`](https://raw.githubusercontent.com/0xiKOn/openstax-flash/main/openstax_flash.py) and run it from any directory.
 
 ### 2. Make it executable (optional)
 
@@ -216,21 +216,21 @@ Cache directory: `~/.cache/openstax-flash`
 
 | | |
 |---|---|
-| **Report a bug** | [Bug report](https://github.com/Un0nnn/openstax-flash/issues/new?template=bug_report.yml) |
-| **Book not working** | [Book support](https://github.com/Un0nnn/openstax-flash/issues/new?template=book_support.yml) |
-| **Request a feature** | [Feature request](https://github.com/Un0nnn/openstax-flash/issues/new?template=feature_request.yml) |
+| **Report a bug** | [Bug report](https://github.com/0xiKOn/openstax-flash/issues/new?template=bug_report.yml) |
+| **Book not working** | [Book support](https://github.com/0xiKOn/openstax-flash/issues/new?template=book_support.yml) |
+| **Request a feature** | [Feature request](https://github.com/0xiKOn/openstax-flash/issues/new?template=feature_request.yml) |
 | **Contribute code** | [CONTRIBUTING.md](CONTRIBUTING.md) |
 | **Security** | [SECURITY.md](SECURITY.md) (private reports only) |
 
 ### Maintainer
 
-**[@Un0nnn](https://github.com/Un0nnn)** — project author and maintainer
+**[@0xiKOn](https://github.com/0xiKOn)** — project author and maintainer
 
 Pull requests from the community are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ### Contributors
 
-Community contributors who merge PRs appear on the [GitHub contributors graph](https://github.com/Un0nnn/openstax-flash/graphs/contributors). Thank you to everyone who reports issues and improves the tool.
+Community contributors who merge PRs appear on the [GitHub contributors graph](https://github.com/0xiKOn/openstax-flash/graphs/contributors). Thank you to everyone who reports issues and improves the tool.
 
 ---
 

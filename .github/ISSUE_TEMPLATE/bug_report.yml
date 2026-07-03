@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for helping improve openstax-flash. Please search [existing issues](https://github.com/Un0nnn/openstax-flash/issues) first.
+        Thanks for helping improve openstax-flash. Please search [existing issues](https://github.com/0xiKOn/openstax-flash/issues) first.
 
   - type: input
     id: version

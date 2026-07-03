@@ -27,7 +27,7 @@ from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
-USER_AGENT = "openstax-flash/1.0 (+https://github.com/Un0nnn/openstax-flash; educational, non-commercial)"
+USER_AGENT = "openstax-flash/1.0 (+https://github.com/0xiKOn/openstax-flash; educational, non-commercial)"
 CMS_BOOKS_URL = "https://openstax.org/apps/cms/api/books/?format=json"
 DEFAULT_CACHE = Path.home() / ".cache" / "openstax-flash"
 CHAPTER_PAGE_RE = re.compile(r"^(\d+)-(?:key-terms|glossary|summary)$")

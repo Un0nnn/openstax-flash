@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: Security vulnerability
-    url: https://github.com/Un0nnn/openstax-flash/blob/main/SECURITY.md
+    url: https://github.com/0xiKOn/openstax-flash/blob/main/SECURITY.md
     about: Report security issues privately — do not open a public issue
   - name: Question / how-to
-    url: https://github.com/Un0nnn/openstax-flash/issues/new?template=feature_request.yml
+    url: https://github.com/0xiKOn/openstax-flash/issues/new?template=feature_request.yml
     about: Not sure which template? Start here and describe what you need
